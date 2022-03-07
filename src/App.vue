@@ -5,8 +5,14 @@ import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+  <div class="q-pa-md fit row justify-center q-gutter-md">
+    <q-card class="my-card">
+      <q-card-section>
+        <img alt="Vue logo" src="./assets/logo.png" />
+        <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+      </q-card-section>
+    </q-card>  
+  </div>  
 </template>
 
 <style>
