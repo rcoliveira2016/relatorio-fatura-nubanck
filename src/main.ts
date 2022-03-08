@@ -5,7 +5,7 @@ import { createPinia } from 'pinia'
 import { router } from '@/routes'
 import '@quasar/extras/material-icons/material-icons.css'
 import 'quasar/dist/quasar.css'
-
+import 'ag-grid-enterprise';
 import App from './App.vue'
 
 const app = createApp(App)

@@ -1,4 +1,4 @@
 export interface IFaturamentoNubank{
-    valor:string,
+    valor: number,
     texto: string
 }

@@ -9,9 +9,13 @@
   },
   "dependencies": {
     "@quasar/extras": "^1.12.5",
+    "ag-grid-community": "^27.0.1",
+    "ag-grid-enterprise": "^27.0.1",
+    "ag-grid-vue3": "^27.0.0",
     "pinia": "^2.0.11",
     "quasar": "^2.5.5",
     "vue": "^3.2.25",
+    "vue-class-component": "^8.0.0-rc.1",
     "vue-router": "4"
   },
   "devDependencies": {

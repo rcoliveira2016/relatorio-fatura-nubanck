@@ -6,3 +6,8 @@ import MasterPage from '@/components/layout/MasterPage.vue'
 <template>
   <master-page />
 </template>
+<style>
+.card-w-100{
+  width: 100%;
+}
+</style>

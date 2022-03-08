@@ -19,7 +19,7 @@
           <q-list>
 
             <template v-for="(menuItem, index) in menuList" :key="index">
-              <q-item clickable :active="menuItem.label === 'Outbox'" v-ripple>
+              <q-item clickable :to="menuItem.to" v-ripple >
                 <q-item-section avatar>
                   <q-icon :name="menuItem.icon" />
                 </q-item-section>
@@ -35,7 +35,9 @@
     </q-drawer>
 
     <q-page-container>
-      <router-view />
+        <q-page padding>
+          <router-view />
+        </q-page>
     </q-page-container>
 
   </q-layout>
@@ -54,38 +56,14 @@ const toggleLeftDrawer = () => {
 const menuList = [
   {
     icon: 'inbox',
-    label: 'Inbox',
+    label: 'Importar',
+    to:'/',
     separator: true
   },
   {
     icon: 'send',
-    label: 'Outbox',
-    separator: false
-  },
-  {
-    icon: 'delete',
-    label: 'Trash',
-    separator: false
-  },
-  {
-    icon: 'error',
-    label: 'Spam',
-    separator: true
-  },
-  {
-    icon: 'settings',
-    label: 'Settings',
-    separator: false
-  },
-  {
-    icon: 'feedback',
-    label: 'Send Feedback',
-    separator: false
-  },
-  {
-    icon: 'help',
-    iconColor: 'primary',
-    label: 'Help',
+    to:'/relatorio',
+    label: 'Relatorio grid',
     separator: false
   }
 ]

@@ -5,7 +5,7 @@ export class RelatorioNubankStore
     public static criarIFaturamentoNubank(nodeTextoRealt: string): IFaturamentoNubank{
         var dados= nodeTextoRealt.split("\t");
         return {
-            valor: dados[1].replace("\r", ""),
+            valor: parseFloat(dados[1].replace("\r", "").split(",").join('.')),
             texto: dados[0]
         }
     }

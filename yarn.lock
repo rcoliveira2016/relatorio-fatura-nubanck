@@ -226,6 +226,24 @@ acorn@^7.1.1:
   resolved "https://registry.npmjs.org/acorn/-/acorn-7.4.1.tgz"
   integrity sha512-nQyp0o1/mNdbTO1PO6kHkwSrmgZ0MT/jCCpNiwbUjGoRN4dlBhqJtoQuCnEOKzgTVwg0ZWiCoQy6SxMebQVh8A==
 
+ag-grid-community@^27.0.1, ag-grid-community@~27.0.0:
+  version "27.0.1"
+  resolved "https://registry.yarnpkg.com/ag-grid-community/-/ag-grid-community-27.0.1.tgz#7ce5c000d321ba2c22447837e793b1d8366f4cdb"
+  integrity sha512-wV3CLLJWet0I7lmlVjVjACVWQ1WmGYflEyc2nKK3u5CDKa9ewQGYcwZW92i+E+9rmGH6R7oaL3DFKzNWD6C56w==
+
+ag-grid-enterprise@^27.0.1:
+  version "27.0.1"
+  resolved "https://registry.yarnpkg.com/ag-grid-enterprise/-/ag-grid-enterprise-27.0.1.tgz#0336d5199523284dc7cabbb40909f93a79742c90"
+  integrity sha512-Gg/4VG/UGu8EkDt/03ucjSHwPlqcusxDGeEfJhzKtNlAgmHhoOUC3OEQWNqNLZVDy+Lw1rMOEm8uMR8umxXdaQ==
+
+ag-grid-vue3@^27.0.0:
+  version "27.0.0"
+  resolved "https://registry.yarnpkg.com/ag-grid-vue3/-/ag-grid-vue3-27.0.0.tgz#f9e1c526f3ce00a0c8f3602669bf8d4f234d9565"
+  integrity sha512-q2yWdCqhLsPQLBqL1IshgshCEPEDw1z/B/3Fky8GOOTwAAeIRsgeYaKaiPGPtHDozgEo8weOLNpysNYsTM/x3g==
+  dependencies:
+    ag-grid-community "~27.0.0"
+    vue "^3.0.0"
+
 asap@~2.0.3:
   version "2.0.6"
   resolved "https://registry.npmjs.org/asap/-/asap-2.0.6.tgz"
@@ -934,6 +952,11 @@ vscode-vue-languageservice@0.29.8:
     vscode-pug-languageservice "0.29.8"
     vscode-typescript-languageservice "0.29.8"
 
+vue-class-component@^8.0.0-rc.1:
+  version "8.0.0-rc.1"
+  resolved "https://registry.yarnpkg.com/vue-class-component/-/vue-class-component-8.0.0-rc.1.tgz#db692cd97656eb9a08206c03d0b7398cdb1d9420"
+  integrity sha512-w1nMzsT/UdbDAXKqhwTmSoyuJzUXKrxLE77PCFVuC6syr8acdFDAq116xgvZh9UCuV0h+rlCtxXolr3Hi3HyPQ==
+
 vue-demi@*:
   version "0.12.1"
   resolved "https://registry.npmjs.org/vue-demi/-/vue-demi-0.12.1.tgz"
@@ -954,7 +977,7 @@ vue-tsc@^0.29.8:
     "@volar/shared" "0.29.8"
     vscode-vue-languageservice "0.29.8"
 
-vue@^3.2.25:
+vue@^3.0.0, vue@^3.2.25:
   version "3.2.31"
   resolved "https://registry.npmjs.org/vue/-/vue-3.2.31.tgz"
   integrity sha512-odT3W2tcffTiQCy57nOT93INw1auq5lYLLYtWpPYQQYQOOdHiqFct9Xhna6GJ+pJQaF67yZABraH47oywkJgFw==
