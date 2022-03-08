@@ -12,66 +12,43 @@
         :rowData="rowData"
         @grid-ready="onGridReady"
         :defaultColDef="defaultColDef"
-        :animateRows="true"
-        :groupIncludeFooter="true"
-        :groupIncludeTotalFooter="true"
+        :animateRows="animateRows"
+        :groupIncludeFooter="groupIncludeFooter"
+        :groupIncludeTotalFooter="groupIncludeTotalFooter"
         :rowGroupPanelShow="rowGroupPanelShow"
-        :localeText="localeText"
+        :localeText="localeText"        
       />
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
+import { useGridRelatorioNubankStore } from "@/stores/relatorio/grid-nubank-store";
 import { useRelatorioNubankStore } from "@/stores/relatorio/relatorio-nubank-store";
-import { ColDef,  GridApi,  GridReadyEvent, ValueFormatterParams } from "ag-grid-community";
+import { GridApi,  GridReadyEvent } from "ag-grid-community";
 import "ag-grid-community/dist/styles/ag-grid.css";
 import "ag-grid-community/dist/styles/ag-theme-alpine.css";
 import { AgGridVue } from "ag-grid-vue3";
+import { storeToRefs } from "pinia";
 import { ref } from "vue";
-import {localeText} from './locale.pt-BR';
+import { localeText } from './locale.pt-BR';
 
-function getCurrencyCellRenderer(params: ValueFormatterParams):string {
-  var ptBRFormatter = new Intl.NumberFormat('pt-BR', {
-    style: 'currency',
-    currency: 'BRL',
-    minimumFractionDigits: 2,
-  });
-  console.log(params);
-  const valor = params?.data?.valor ?? params.value;
-  return ptBRFormatter.format(valor)
-}
+const relatorioNubankStore = useRelatorioNubankStore();
+const gridRelatorioNubankStore = useGridRelatorioNubankStore();
 
 let gridApi: GridApi;
 
-const columnDefs:ColDef[] = [
-    { 
-      field: "texto", 
-      headerName:"Empresa compra",
-      sortable: true,
-      filter: 'agTextColumnFilter', 
-      width:400, 
-      enableRowGroup: true 
-    },
-    { 
-      field: "valor",
-      headerName:"Valor",
-      sortable: true,
-      filter: 'agNumberColumnFilter',
-      enableRowGroup: true,
-      aggFunc: 'sum',
-      valueFormatter: getCurrencyCellRenderer
-    },
-];
-const relatorioNubankStore = useRelatorioNubankStore();
 const rowData = ref(relatorioNubankStore.listaFaturamento);
-const rowGroupPanelShow = 'always';
-const defaultColDef = {
-  flex: 1,
-  minWidth: 100,
-  sortable: true,
-  resizable: true,
-};
+
+const { 
+  columnDefs,
+  animateRows,
+  defaultColDef,
+  rowGroupPanelShow, 
+  groupIncludeFooter, 
+  groupIncludeTotalFooter 
+} = storeToRefs(gridRelatorioNubankStore)
+
 const onGridReady = (params:GridReadyEvent) => {
   gridApi = params.api;
 }

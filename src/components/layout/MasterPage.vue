@@ -7,9 +7,9 @@
 
         <q-toolbar-title>
           <q-avatar>
-            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
+            <img src="@/assets/icone-card.png">
           </q-avatar>
-          Title
+          Relatorio fatura nubank
         </q-toolbar-title>
       </q-toolbar>
     </q-header>
